@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react';
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { Button } from '@/components/ui/button';
-import { Bell, Moon, Sun, User } from 'lucide-react';
+import { Bell, Moon, Sun, User, Home as HomeIcon, CreditCard, Scan, BarChart, UserCircle } from 'lucide-react';
 import { WalletCard } from '@/components/WalletCard';
 import { ServiceCube } from '@/components/ServiceCube';
 import { TransactionItem } from '@/components/TransactionItem';
@@ -208,23 +208,22 @@ export default function Home() {
       <nav className="fixed bottom-0 left-0 right-0 bg-white dark:bg-black border-t border-gray-200 dark:border-gray-800 p-4">
         <div className="flex items-center justify-around">
           <Button variant="ghost" className="flex flex-col items-center gap-1 text-blue-600 dark:text-red-400">
-            <div className="w-6 h-6 rounded bg-current" />
-            <span className="text-xs">الرئيسية</span>
+            <HomeIcon className="w-6 h-6" />
           </Button>
           <Button variant="ghost" className="flex flex-col items-center gap-1 text-gray-500">
-            <div className="w-6 h-6 rounded bg-current" />
+            <CreditCard className="w-6 h-6" />
             <span className="text-xs">المعاملات</span>
           </Button>
           <Button variant="ghost" className="flex flex-col items-center gap-1 text-gray-500">
-            <div className="w-6 h-6 rounded bg-current" />
+            <Scan className="w-6 h-6" />
             <span className="text-xs">المسح</span>
           </Button>
           <Button variant="ghost" className="flex flex-col items-center gap-1 text-gray-500">
-            <div className="w-6 h-6 rounded bg-current" />
+            <BarChart className="w-6 h-6" />
             <span className="text-xs">التقارير</span>
           </Button>
           <Button variant="ghost" className="flex flex-col items-center gap-1 text-gray-500">
-            <div className="w-6 h-6 rounded bg-current" />
+            <UserCircle className="w-6 h-6" />
             <span className="text-xs">الملف الشخصي</span>
           </Button>
         </div>
