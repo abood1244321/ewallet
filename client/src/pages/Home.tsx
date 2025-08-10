@@ -209,6 +209,7 @@ export default function Home() {
         <div className="flex items-center justify-around">
           <Button variant="ghost" className="flex flex-col items-center gap-1 text-blue-600 dark:text-red-400">
             <HomeIcon className="w-6 h-6" />
+            <span className="text-xs">الرئيسية</span>
           </Button>
           <Button variant="ghost" className="flex flex-col items-center gap-1 text-gray-500">
             <CreditCard className="w-6 h-6" />
