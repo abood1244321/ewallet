@@ -9,6 +9,7 @@ import { useTheme } from '@/components/ThemeProvider';
 import { useAuth } from '@/hooks/useAuth';
 import { apiRequest } from '@/lib/queryClient';
 import { useToast } from '@/hooks/use-toast';
+import { useLocation } from 'wouter';
 import type { Wallet, Transaction } from '@shared/schema';
 
 export default function Home() {
@@ -16,6 +17,7 @@ export default function Home() {
   const { user } = useAuth();
   const { toast } = useToast();
   const queryClient = useQueryClient();
+  const [, navigate] = useLocation();
 
   // Initialize wallets for new users
   const initializeWalletsMutation = useMutation({
@@ -67,6 +69,14 @@ export default function Home() {
 
   const handleLogout = () => {
     window.location.href = '/api/logout';
+  };
+
+  const handleServiceClick = (service: { title: string }) => {
+    if (service.title === 'تحويلات مالية') {
+      navigate('/financial-transfers');
+    } else {
+      toast({ title: service.title, description: 'قريباً...' });
+    }
   };
 
   return (
@@ -166,8 +176,9 @@ export default function Home() {
                 key={index}
                 icon={service.icon}
                 title={service.title}
-                onClick={() => toast({ title: service.title, description: 'قريباً...' })}
+                onClick={() => handleServiceClick(service)}
                 className="p-4"
+                data-testid={`service-${service.title.replace(/\s+/g, '-')}`}
               />
             ))}
           </div>

@@ -9,6 +9,7 @@ import Landing from "@/pages/Landing";
 import Home from "@/pages/Home";
 import Transactions from "@/pages/Transactions";
 import Profile from "@/pages/Profile";
+import FinancialTransfers from "@/pages/FinancialTransfers";
 import NotFound from "@/pages/not-found";
 
 function Router() {
@@ -23,6 +24,7 @@ function Router() {
           <Route path="/" component={Home} />
           <Route path="/transactions" component={Transactions} />
           <Route path="/profile" component={Profile} />
+          <Route path="/financial-transfers" component={FinancialTransfers} />
         </>
       )}
       <Route component={NotFound} />
