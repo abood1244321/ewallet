@@ -66,32 +66,32 @@ export default function FinancialTransfers() {
 
       <div className="p-4">
         {/* Transfer Options Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3">
+        <div className="grid grid-cols-3 md:grid-cols-4 gap-2">
           {transferOptions.map((option, index) => (
             <div
               key={index}
-              className="group bg-white dark:bg-gray-800 rounded-lg p-4 shadow-md border border-gray-200 dark:border-gray-700 hover:shadow-lg hover:border-red-300 dark:hover:border-blue-400 transition-all duration-200 cursor-pointer"
+              className="group bg-white dark:bg-gray-800 rounded-md p-2 shadow-sm border border-gray-200 dark:border-gray-700 hover:shadow-md hover:border-red-300 dark:hover:border-blue-400 transition-all duration-200 cursor-pointer"
               onClick={() => handleTransferOptionClick(option)}
               data-testid={`card-transfer-option-${index}`}
             >
-              <div className="flex flex-col items-center text-center h-full">
+              <div className="flex flex-col items-center text-center">
                 {/* Icon */}
-                <div className="w-12 h-12 bg-red-100 dark:bg-blue-900/30 rounded-lg flex items-center justify-center mb-3 group-hover:bg-red-200 dark:group-hover:bg-blue-800/40 transition-colors">
+                <div className="w-8 h-8 bg-red-100 dark:bg-blue-900/30 rounded-md flex items-center justify-center mb-1 group-hover:bg-red-200 dark:group-hover:bg-blue-800/40 transition-colors">
                   <ServiceCube
                     icon={option.icon}
                     title=""
                     onClick={() => {}}
-                    className="w-6 h-6 !p-0 !bg-transparent !shadow-none text-red-600 dark:text-blue-400"
+                    className="w-4 h-4 !p-0 !bg-transparent !shadow-none text-red-600 dark:text-blue-400"
                   />
                 </div>
                 
                 {/* Title */}
-                <h3 className="text-sm font-semibold text-gray-800 dark:text-white mb-2 leading-tight">
+                <h3 className="text-xs font-semibold text-gray-800 dark:text-white mb-1 leading-tight text-center">
                   {option.title}
                 </h3>
                 
-                {/* Description */}
-                <p className="text-xs text-gray-500 dark:text-gray-400 leading-relaxed line-clamp-2 flex-1">
+                {/* Description - hidden on small cards */}
+                <p className="text-xs text-gray-500 dark:text-gray-400 leading-tight line-clamp-1 hidden sm:block">
                   {option.description}
                 </p>
               </div>
